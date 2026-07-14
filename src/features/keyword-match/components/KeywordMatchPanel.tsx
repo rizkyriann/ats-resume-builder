@@ -6,12 +6,12 @@ export function KeywordMatchPanel() {
   const [jobDescription, setJobDescription] = useState('')
 
   return (
-    <div className="border-[3px] border-black bg-white p-6">
+    <div className="qu-card-elevated p-6">
       <div className="mb-4">
-        <h2 className="rb-headline text-lg uppercase tracking-wide">
+        <h2 className="qu-headline text-lg uppercase tracking-wide text-qu-gold">
           Keyword Match
         </h2>
-        <p className="mt-1 text-sm">
+        <p className="mt-1 text-sm text-qu-text-muted">
           Compare your resume against a specific job description
         </p>
       </div>

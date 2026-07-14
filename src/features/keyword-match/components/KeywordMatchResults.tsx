@@ -9,47 +9,47 @@ export function KeywordMatchResults({ jobDescription }: KeywordMatchResultsProps
 
   if (!jobDescription.trim()) {
     return (
-      <p className="text-sm">
+      <p className="text-sm text-qu-text-muted">
         Paste a job description above to analyze keyword matches.
       </p>
     )
   }
 
   if (!result) {
-    return <p className="font-mono text-sm uppercase tracking-wider">Analyzing...</p>
+    return <p className="qu-mono text-sm uppercase tracking-wider text-qu-text-muted">Analyzing...</p>
   }
 
   if (result.matched.length === 0 && result.missing.length === 0) {
     return (
-      <p className="text-sm">
+      <p className="text-sm text-qu-text-muted">
         No keywords could be extracted from this job description.
       </p>
     )
   }
 
   const getCoverageColor = (percent: number) => {
-    if (percent >= 80) return 'text-[#008000]'
-    if (percent >= 60) return 'text-[#ffa500]'
-    return 'text-[#ff0000]'
+    if (percent >= 80) return 'text-qu-success'
+    if (percent >= 60) return 'text-qu-warning'
+    return 'text-qu-red-text'
   }
 
   return (
     <div className="space-y-6">
-      <div className="border-[3px] border-black p-4">
+      <div className="qu-card rounded-qu p-4">
         <div className="mb-2 flex items-center justify-between">
-          <span className="text-sm font-semibold uppercase tracking-wide">Coverage</span>
-          <span className={`rb-headline text-2xl ${getCoverageColor(result.coveragePercent)}`}>
+          <span className="qu-headline text-sm uppercase tracking-wide text-qu-text">Coverage</span>
+          <span className={`qu-headline text-2xl ${getCoverageColor(result.coveragePercent)}`}>
             {Math.round(result.coveragePercent)}%
           </span>
         </div>
-        <div className="h-3 w-full overflow-hidden border-[2px] border-black bg-[#f0f0f0]">
+        <div className="h-3 w-full overflow-hidden rounded-qu-sm border border-qu-border bg-qu-surface">
           <div
             className={`h-full transition-all ${
               result.coveragePercent >= 80
-                ? 'bg-[#008000]'
+                ? 'bg-qu-success'
                 : result.coveragePercent >= 60
-                  ? 'bg-[#ffa500]'
-                  : 'bg-[#ff0000]'
+                  ? 'bg-qu-warning'
+                  : 'bg-qu-error'
             }`}
             style={{ width: `${Math.min(result.coveragePercent, 100)}%` }}
           />
@@ -58,14 +58,14 @@ export function KeywordMatchResults({ jobDescription }: KeywordMatchResultsProps
 
       {result.matched.length > 0 && (
         <div>
-          <h3 className="mb-2 font-semibold uppercase tracking-wide text-[#008000]">
+          <h3 className="qu-headline mb-2 text-sm uppercase tracking-wide text-qu-success">
             Matched Keywords ({result.matched.length})
           </h3>
           <div className="flex flex-wrap gap-2">
             {result.matched.map((kw) => (
               <span
                 key={kw.term}
-                className="border-[2px] border-[#008000] bg-white px-3 py-1.5 font-mono text-xs uppercase tracking-wider"
+                className="qu-headline rounded-qu-sm border border-qu-success/50 bg-qu-success/15 px-3 py-1 text-[11px] uppercase tracking-[1px] text-qu-success"
               >
                 {kw.term}
               </span>
@@ -76,14 +76,14 @@ export function KeywordMatchResults({ jobDescription }: KeywordMatchResultsProps
 
       {result.missing.length > 0 && (
         <div>
-          <h3 className="mb-2 font-semibold uppercase tracking-wide text-[#ff0000]">
+          <h3 className="qu-headline mb-2 text-sm uppercase tracking-wide text-qu-red-text">
             Missing Keywords ({result.missing.length})
           </h3>
           <div className="flex flex-wrap gap-2">
             {result.missing.map((kw) => (
               <span
                 key={kw.term}
-                className="border-[2px] border-[#ff0000] bg-white px-3 py-1.5 font-mono text-xs uppercase tracking-wider"
+                className="qu-headline rounded-qu-sm border border-qu-red/60 bg-qu-red/15 px-3 py-1 text-[11px] uppercase tracking-[1px] text-qu-red-text"
               >
                 {kw.term}
               </span>
@@ -94,8 +94,8 @@ export function KeywordMatchResults({ jobDescription }: KeywordMatchResultsProps
 
       {result.suggestions.length > 0 && (
         <div>
-          <h3 className="mb-2 font-semibold uppercase tracking-wide">Suggestions</h3>
-          <ul className="space-y-1 text-sm">
+          <h3 className="qu-headline mb-2 text-sm uppercase tracking-wide text-qu-gold">Suggestions</h3>
+          <ul className="space-y-1 text-sm text-qu-text-muted">
             {result.suggestions.map((suggestion, i) => (
               <li key={i}>• {suggestion}</li>
             ))}

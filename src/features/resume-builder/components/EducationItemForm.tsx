@@ -31,7 +31,7 @@ export function EducationItemForm({ id, index }: EducationItemFormProps) {
   const canMoveDown = index < education.length - 1
 
   return (
-    <div className="border-[3px] border-black bg-white p-4">
+    <div className="qu-card p-4">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="font-semibold uppercase tracking-wide">Education #{index + 1}</h3>
         <div className="flex gap-2">

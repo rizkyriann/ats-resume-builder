@@ -5,21 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/cn"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold uppercase tracking-[2px] transition-all focus-visible:outline-none focus-visible:outline-[3px] focus-visible:outline-black focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "font-headline inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-qu font-medium uppercase tracking-[1px] transition-all focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-qu-gold focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-35 disabled:shadow-none",
   {
     variants: {
       variant: {
-        default: "border-[3px] border-black bg-black text-white hover:bg-white hover:text-black active:border-[5px]",
-        secondary: "border-[3px] border-black bg-white text-black hover:bg-black hover:text-white",
-        ghost: "border-0 bg-transparent text-black underline hover:text-[#0000ff]",
-        destructive: "border-[3px] border-black bg-[#ff0000] text-white hover:bg-black hover:text-[#ff0000]",
-        outline: "border-[3px] border-black bg-white text-black hover:bg-black hover:text-white",
+        default:
+          "border border-qu-gold-bright bg-qu-gold text-qu-bg shadow-qu-sm hover:bg-qu-gold-deep hover:shadow-qu-glow disabled:border-qu-border",
+        secondary:
+          "border border-qu-gold bg-transparent text-qu-gold hover:bg-qu-gold/[0.08] hover:shadow-qu-sm disabled:border-qu-border",
+        ghost:
+          "border-0 bg-transparent text-qu-text-muted hover:bg-qu-surface-raised hover:text-qu-text",
+        destructive:
+          "border border-qu-red-bright bg-qu-red text-qu-text shadow-qu-sm hover:bg-qu-red-deep disabled:border-qu-border",
+        outline:
+          "border border-qu-gold bg-transparent text-qu-gold hover:bg-qu-gold/[0.08] hover:shadow-qu-sm disabled:border-qu-border",
       },
       size: {
-        default: "h-11 px-6 text-sm",
-        sm: "h-8 px-4 text-xs",
-        lg: "h-14 px-10 text-base",
-        icon: "h-11 w-11",
+        default: "h-10 px-[22px] text-sm",
+        sm: "h-8 px-[14px] text-[13px]",
+        lg: "h-12 px-[30px] text-base",
+        icon: "h-10 w-10",
       },
     },
     defaultVariants: {

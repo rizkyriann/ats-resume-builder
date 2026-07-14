@@ -7,9 +7,9 @@ interface ScoreCategoryBreakdownProps {
 export function ScoreCategoryBreakdown({ categories }: ScoreCategoryBreakdownProps) {
   const getProgressColor = (score: number, maxScore: number) => {
     const percent = (score / maxScore) * 100
-    if (percent >= 80) return 'bg-[#008000]'
-    if (percent >= 60) return 'bg-[#ffa500]'
-    return 'bg-[#ff0000]'
+    if (percent >= 80) return 'bg-qu-success'
+    if (percent >= 60) return 'bg-qu-warning'
+    return 'bg-qu-error'
   }
 
   return (
@@ -20,13 +20,13 @@ export function ScoreCategoryBreakdown({ categories }: ScoreCategoryBreakdownPro
         return (
           <div key={cat.key} className="space-y-1">
             <div className="flex items-center justify-between text-sm">
-              <span className="font-semibold">{cat.label}</span>
-              <span className="text-gray-600">
+              <span className="font-semibold text-qu-text">{cat.label}</span>
+              <span className="text-qu-text-muted">
                 {Math.round(cat.score)} / {cat.maxScore}
               </span>
             </div>
 
-            <div className="h-3 w-full overflow-hidden border-[2px] border-black bg-[#f0f0f0]">
+            <div className="h-3 w-full overflow-hidden rounded-qu-sm border border-qu-border bg-qu-surface">
               <div
                 className={`h-full transition-all ${getProgressColor(cat.score, cat.maxScore)}`}
                 style={{ width: `${Math.min(percent, 100)}%` }}
@@ -34,7 +34,7 @@ export function ScoreCategoryBreakdown({ categories }: ScoreCategoryBreakdownPro
             </div>
 
             {cat.suggestions.length > 0 && (
-              <ul className="mt-1 space-y-1 text-xs">
+              <ul className="mt-1 space-y-1 text-xs text-qu-text-muted">
                 {cat.suggestions.map((suggestion, i) => (
                   <li key={i}>• {suggestion}</li>
                 ))}

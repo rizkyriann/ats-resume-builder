@@ -27,7 +27,7 @@ export function SkillsInput() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="rb-headline text-2xl uppercase tracking-wide">Skills</h2>
+        <h2 className="qu-headline text-2xl uppercase tracking-wide">Skills</h2>
         <p className="mt-1 text-sm">
           Add your technical and professional skills.
         </p>
@@ -43,7 +43,7 @@ export function SkillsInput() {
           placeholder="Type a skill and press Enter or comma"
           className="mb-3"
         />
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-qu-text-muted">
           Press Enter or comma to add. Press Backspace on empty input to remove last skill.
         </p>
       </div>
@@ -53,12 +53,12 @@ export function SkillsInput() {
           {skills.map((skill) => (
             <div
               key={skill}
-              className="flex items-center gap-1 border-[2px] border-black bg-white px-3 py-1.5 font-mono text-xs uppercase tracking-wider"
+              className="qu-headline flex items-center gap-1 rounded-qu-sm border border-qu-border bg-qu-surface px-3 py-1 text-[11px] uppercase tracking-[1px] text-qu-text-muted"
             >
               <span>{skill}</span>
               <button
                 onClick={() => removeSkill(skill)}
-                className="ml-1 hover:bg-black hover:text-white"
+                className="ml-1 rounded-qu-sm text-qu-text-muted transition-colors hover:text-qu-gold"
                 aria-label={`Remove ${skill}`}
               >
                 <X className="h-3 w-3" />
@@ -69,7 +69,7 @@ export function SkillsInput() {
       )}
 
       {skills.length === 0 && (
-        <p className="text-sm text-muted-foreground">No skills added yet. Start typing to add skills.</p>
+        <p className="text-sm text-qu-text-muted">No skills added yet. Start typing to add skills.</p>
       )}
     </div>
   )

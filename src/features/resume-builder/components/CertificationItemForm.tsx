@@ -29,7 +29,7 @@ export function CertificationItemForm({ id, index }: CertificationItemFormProps)
   const canMoveDown = index < certifications.length - 1
 
   return (
-    <div className="border-[3px] border-black bg-white p-4">
+    <div className="qu-card p-4">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="font-semibold uppercase tracking-wide">Certification #{index + 1}</h3>
         <div className="flex gap-2">

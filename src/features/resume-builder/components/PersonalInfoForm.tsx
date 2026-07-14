@@ -24,7 +24,7 @@ export function PersonalInfoForm() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="rb-headline text-2xl uppercase tracking-wide">Personal Information</h2>
+        <h2 className="qu-headline text-2xl uppercase tracking-wide">Personal Information</h2>
         <p className="mt-1 text-sm">
           Enter your contact details and professional identity.
         </p>

@@ -10,7 +10,7 @@ export function EducationList() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="rb-headline text-2xl uppercase tracking-wide">Education</h2>
+        <h2 className="qu-headline text-2xl uppercase tracking-wide">Education</h2>
         <p className="mt-1 text-sm">
           Add your educational background, starting with the most recent.
         </p>

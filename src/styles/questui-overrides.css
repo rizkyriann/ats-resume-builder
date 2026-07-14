@@ -1,0 +1,100 @@
+/* QuestUI component overrides — fantasy RPG styling for raw HTML controls */
+
+/*
+ * Resume paper — kept print-safe (white page, dark ink) so the on-screen
+ * preview stays representative of the exported PDF / ATS output. Overrides the
+ * dark-theme parchment heading color that would otherwise be invisible here.
+ */
+.qu-resume-paper,
+.qu-resume-paper h1,
+.qu-resume-paper h2,
+.qu-resume-paper h3,
+.qu-resume-paper h4 {
+  color: #1a1a1a;
+}
+
+
+/* Inputs — sunken dark-brown surface, soft border, gold focus ring */
+input[type='text'],
+input[type='email'],
+input[type='month'],
+input[type='url'],
+input[type='tel'],
+textarea,
+select {
+  background: var(--color-qu-surface);
+  border: 1px solid var(--color-qu-border);
+  border-radius: var(--radius-qu);
+  color: var(--color-qu-text);
+  font-family: var(--font-body);
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-qu-text-muted);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--color-qu-gold);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 2px solid var(--color-qu-gold);
+  box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.25);
+  outline: none;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  border-color: var(--color-qu-border-soft);
+  background: var(--color-qu-bg);
+  color: var(--color-qu-text-muted);
+  cursor: not-allowed;
+}
+
+/* Checkboxes — 20px, gold when checked, checkmark in dark brown */
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-qu-border);
+  border-radius: var(--radius-qu-sm);
+  background: var(--color-qu-surface);
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input[type='checkbox']:checked {
+  background: var(--color-qu-gold);
+  border-color: var(--color-qu-gold);
+}
+
+input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid var(--color-qu-bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+input[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.25);
+  outline: none;
+}
+
+input[type='checkbox']:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

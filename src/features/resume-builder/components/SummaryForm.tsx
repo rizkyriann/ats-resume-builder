@@ -16,7 +16,7 @@ export function SummaryForm() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="rb-headline text-2xl uppercase tracking-wide">
+        <h2 className="qu-headline text-2xl uppercase tracking-wide">
           Professional Summary
         </h2>
         <p className="mt-1 text-sm">
@@ -33,7 +33,7 @@ export function SummaryForm() {
           placeholder="Experienced software engineer with 5+ years building scalable web applications..."
           className="min-h-[150px]"
         />
-        <p className="mt-1 text-xs text-muted-foreground">
+        <p className="mt-1 text-xs text-qu-text-muted">
           {wordCount} words (recommended: 40-60 words)
         </p>
       </div>

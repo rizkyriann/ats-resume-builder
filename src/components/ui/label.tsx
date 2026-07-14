@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/cn"
 
 const labelVariants = cva(
-  "mb-1 block rb-headline text-sm uppercase leading-none tracking-wide peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  "mb-1.5 block qu-headline text-sm font-medium uppercase leading-none tracking-wide text-qu-text peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 )
 
 const Label = React.forwardRef<

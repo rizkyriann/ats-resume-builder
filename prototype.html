@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scroll of Career - Scribe's Workshop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "border-muted": "#5C3D2E",
+                "secondary-fixed-dim": "#ffb4ac",
+                "on-error": "#690005",
+                "secondary-fixed": "#ffdad6",
+                "tertiary-fixed": "#f2daff",
+                "on-secondary-fixed-variant": "#8e1214",
+                "surface-dim": "#18120b",
+                "surface-container": "#251f16",
+                "surface": "#2C1A10",
+                "outline": "#9e8e7b",
+                "surface-bright": "#3f382f",
+                "primary-fixed": "#ffddb0",
+                "surface-container-lowest": "#130d06",
+                "on-secondary-fixed": "#410002",
+                "on-secondary": "#690007",
+                "primary-container": "#ca8a04",
+                "secondary-container": "#921517",
+                "inverse-primary": "#805600",
+                "inverse-surface": "#ede0d3",
+                "surface-variant": "#3b342a",
+                "success": "#22C55E",
+                "on-tertiary-fixed": "#2d004f",
+                "on-secondary-container": "#ff9f95",
+                "on-tertiary-fixed-variant": "#632892",
+                "surface-container-highest": "#3b342a",
+                "tertiary-fixed-dim": "#e0b6ff",
+                "outline-variant": "#514535",
+                "error": "#ffb4ab",
+                "surface-container-high": "#302920",
+                "tertiary": "#e0b6ff",
+                "secondary": "#ffb4ac",
+                "on-surface": "#ede0d3",
+                "on-primary": "#442c00",
+                "on-surface-variant": "#d5c4ae",
+                "on-error-container": "#ffdad6",
+                "inverse-on-surface": "#362f26",
+                "primary-fixed-dim": "#ffba46",
+                "on-primary-container": "#422a00",
+                "error-container": "#93000a",
+                "parchment-text": "#F5E6D3",
+                "tertiary-container": "#b87de9",
+                "on-background": "#ede0d3",
+                "surface-container-low": "#211b12",
+                "background": "#1A0F0A",
+                "surface-tint": "#ffba46",
+                "on-tertiary-container": "#490378",
+                "on-primary-fixed-variant": "#614000",
+                "primary": "#ffba46",
+                "surface-elevated": "#3D2517",
+                "lore-text": "#BFA98A",
+                "on-primary-fixed": "#281800",
+                "on-tertiary": "#4a067a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "md": "16px",
+                "3xl": "64px",
+                "2xl": "48px",
+                "xs": "4px",
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px"
+            },
+            "fontFamily": {
+                "code": ["jetbrainsMono"],
+                "headline-h3": ["Cinzel"],
+                "body-sm": ["Spectral"],
+                "headline-h1": ["Cinzel"],
+                "caption": ["Spectral"],
+                "body": ["Spectral"],
+                "body-lg": ["Spectral"],
+                "label-upper": ["Cinzel"],
+                "display": ["Cinzel"],
+                "headline-h2": ["Cinzel"],
+                "headline-h4": ["Cinzel"]
+            },
+            "fontSize": {
+                "code": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-h3": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "body": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                "label-upper": ["11px", {"lineHeight": "1.0", "letterSpacing": "1px", "fontWeight": "400"}],
+                "display": ["40px", {"lineHeight": "1.15", "fontWeight": "700"}],
+                "headline-h2": ["24px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                "headline-h4": ["16px", {"lineHeight": "1.35", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .parchment-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(202, 138, 4, 0.05);
+        }
+        .gold-glow-focus:focus-within {
+            box-shadow: 0 0 12px rgba(202, 138, 4, 0.4);
+            border-color: #CA8A04;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1A0F0A; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #5C3D2E; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #CA8A04; }
+        
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        .animate-pulse-gold { animation: subtle-pulse 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body custom-scrollbar overflow-x-hidden">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center px-lg py-md w-full sticky top-0 z-50 bg-surface dark:bg-surface border-b border-border-muted shadow-[0_0_15px_rgba(202,138,4,0.15)]">
+<div class="flex items-center gap-md">
+<span class="font-display text-headline-h2 text-primary dark:text-primary-fixed tracking-tight">Scroll of Career</span>
+</div>
+<div class="flex items-center gap-lg">
+<button class="font-label-upper text-label-upper text-primary font-bold hover:bg-surface-elevated transition-colors duration-300 px-md py-sm rounded-lg active:scale-95 transition-transform">
+                Download Scroll
+            </button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-elevated p-sm rounded-full transition-colors">settings</button>
+</div>
+</header>
+<div class="flex flex-row min-h-[calc(100vh-72px)]">
+<!-- SideNavBar Component -->
+<nav class="flex flex-col h-[calc(100vh-72px)] w-64 bg-surface-container dark:bg-surface-container border-r border-border-muted sticky top-[72px] shrink-0">
+<div class="p-lg">
+<h2 class="font-headline-h2 text-headline-h2 text-primary">Scribe's Workshop</h2>
+<p class="font-caption text-caption text-lore-text mt-xs">Drafting your legend</p>
+</div>
+<div class="flex-1 px-md flex flex-col gap-sm overflow-y-auto custom-scrollbar">
+<!-- Nav Items (Mapping Experience as Active) -->
+<a class="flex items-center gap-md px-md py-sm text-lore-text hover:bg-surface-bright transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-upper text-label-upper">Personal Info</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-lore-text hover:bg-surface-bright transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-upper text-label-upper">Summary</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-lg font-bold transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-upper text-label-upper">Experience</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-lore-text hover:bg-surface-bright transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-upper text-label-upper">Education</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-lore-text hover:bg-surface-bright transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-upper text-label-upper">Skills</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-lore-text hover:bg-surface-bright transition-all cursor-pointer rounded-lg" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-label-upper text-label-upper">Certifications</span>
+</a>
+</div>
+<div class="p-lg border-t border-border-muted mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-upper text-label-upper py-md rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all">
+                    Preview Record
+                </button>
+</div>
+</nav>
+<!-- Main Workspace (Two-Pane) -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Pane: Builder -->
+<section class="flex-1 overflow-y-auto p-xl bg-background custom-scrollbar">
+<div class="max-w-3xl mx-auto space-y-xl">
+<!-- Section Header -->
+<div class="flex items-center justify-between border-b border-primary/30 pb-md">
+<h1 class="font-headline-h1 text-headline-h1 text-primary flex items-center gap-md">
+<span class="material-symbols-outlined text-3xl">work</span>
+                            Professional Experience
+                        </h1>
+<span class="bg-primary/10 text-primary border border-primary/20 px-md py-xs rounded-full font-label-upper text-caption">Active Quest</span>
+</div>
+<!-- Experience Entry Card -->
+<div class="bg-surface-elevated border border-border-muted rounded-xl p-lg space-y-lg relative overflow-hidden transition-all hover:border-primary/50 group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="grid grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="font-label-upper text-label-upper text-parchment-text">Guild / Company</label>
+<div class="gold-glow-focus border border-border-muted bg-surface rounded px-md py-sm transition-all">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body outline-none" placeholder="e.g. Iron Forge Corp" type="text" value="Kingdom Tech Solutions"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-upper text-label-upper text-parchment-text">Role / Position</label>
+<div class="gold-glow-focus border border-border-muted bg-surface rounded px-md py-sm transition-all">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body outline-none" placeholder="e.g. Master Scribe" type="text" value="Lead Sword Architect"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="font-label-upper text-label-upper text-parchment-text">Commission Start</label>
+<div class="gold-glow-focus border border-border-muted bg-surface rounded px-md py-sm transition-all">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body outline-none" type="text" value="Jan 2021"/>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-upper text-label-upper text-parchment-text">Commission End</label>
+<label class="flex items-center gap-xs cursor-pointer group/check">
+<input checked="" class="form-checkbox bg-surface border-border-muted text-primary-container rounded-sm" type="checkbox"/>
+<span class="text-caption text-lore-text group-hover/check:text-primary">Current Job</span>
+</label>
+</div>
+<div class="gold-glow-focus border border-border-muted bg-surface rounded px-md py-sm transition-all opacity-60">
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body outline-none cursor-not-allowed" disabled="" type="text" value="Present"/>
+</div>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-upper text-label-upper text-parchment-text">Deeds &amp; Achievements</label>
+<div class="gold-glow-focus border border-border-muted bg-surface rounded px-md py-sm transition-all">
+<textarea class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body outline-none resize-none" placeholder="Document your victories here..." rows="4">• Spearheaded the development of mystical front-end components using React Alchemy.
+• Optimized script delivery speeds by 40%, reducing mana costs for all users.
+• Mentored a squad of junior scribes in the ways of TypeScript and Clean Code scrolls.</textarea>
+</div>
+</div>
+<div class="flex justify-end gap-md pt-sm">
+<button class="text-on-surface-variant hover:text-error flex items-center gap-xs font-label-upper transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span> Burn Record
+                            </button>
+</div>
+</div>
+<!-- Add Entry Button -->
+<button class="w-full border-2 border-dashed border-border-muted hover:border-primary-container hover:bg-surface-elevated text-lore-text hover:text-primary py-lg rounded-xl flex items-center justify-center gap-md transition-all group active:scale-[0.99]">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform">add_circle</span>
+<span class="font-label-upper text-label-upper">Inscribe New Experience Entry</span>
+</button>
+</div>
+</section>
+<!-- Right Pane: Preview & Insights -->
+<aside class="w-[500px] bg-surface-container-lowest border-l border-border-muted flex flex-col p-lg gap-lg relative">
+<!-- ATS & Keywords Widgets -->
+<div class="grid grid-cols-2 gap-md shrink-0">
+<!-- Circular Score -->
+<div class="bg-surface border border-border-muted p-md rounded-xl flex flex-col items-center justify-center text-center">
+<div class="relative w-20 h-20 flex items-center justify-center mb-sm">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-border-muted" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary-container transition-all duration-1000" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="63" stroke-width="6"></circle>
+</svg>
+<span class="absolute font-headline-h3 text-primary">72%</span>
+</div>
+<h3 class="font-label-upper text-label-upper text-primary">Quest Mastery</h3>
+</div>
+<!-- Keyword Match -->
+<div class="bg-surface border border-border-muted p-md rounded-xl space-y-sm">
+<h3 class="font-label-upper text-label-upper text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">psychiatry</span> Divine Insights
+                        </h3>
+<div class="flex flex-wrap gap-xs">
+<span class="text-[9px] px-2 py-0.5 rounded bg-success/20 text-success border border-success/30 font-label-upper">React</span>
+<span class="text-[9px] px-2 py-0.5 rounded bg-success/20 text-success border border-success/30 font-label-upper">TypeScript</span>
+<span class="text-[9px] px-2 py-0.5 rounded bg-error/20 text-error border border-error/30 font-label-upper">Sword Mastery</span>
+<span class="text-[9px] px-2 py-0.5 rounded bg-success/20 text-success border border-success/30 font-label-upper">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- Resume Preview (A4 Sheet) -->
+<div class="flex-1 overflow-y-auto custom-scrollbar flex justify-center bg-background/50 rounded-xl p-md">
+<div class="w-full aspect-[1/1.41] bg-[#F5E6D3] parchment-shadow p-xl text-[#2C1A10] font-body relative overflow-hidden origin-top scale-[0.95]">
+<!-- Parchment Texture Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/parchment.png');"></div>
+<!-- Preview Content -->
+<div class="relative z-10 space-y-md">
+<div class="text-center border-b border-[#2C1A10]/20 pb-md mb-lg">
+<h2 class="font-display text-headline-h1 uppercase tracking-widest">ARTHUR PENDRAGON</h2>
+<p class="font-caption text-caption">The Citadel, Camelot • seeker@excalibur.io • 555-EXCALIBUR</p>
+</div>
+<div class="space-y-sm">
+<h3 class="font-headline-h4 border-b border-[#2C1A10]/30 font-bold uppercase text-sm tracking-widest">Experience</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-baseline">
+<span class="font-bold">Kingdom Tech Solutions</span>
+<span class="text-caption italic">Jan 2021 — Present</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="italic font-medium">Lead Sword Architect</span>
+<span class="text-caption">Camelot City</span>
+</div>
+<ul class="list-disc list-inside text-sm space-y-1 ml-sm">
+<li>Spearheaded the development of mystical front-end components using React Alchemy.</li>
+<li>Optimized script delivery speeds by 40%, reducing mana costs for all users.</li>
+<li>Mentored a squad of junior scribes in the ways of TypeScript and Clean Code scrolls.</li>
+</ul>
+</div>
+<div class="space-y-sm mt-md opacity-40">
+<div class="flex justify-between items-baseline">
+<span class="font-bold">Round Table Interactive</span>
+<span class="text-caption italic">Jun 2018 — Dec 2020</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="italic font-medium">Senior Combat Specialist</span>
+<span class="text-caption">Avalon Bay</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Bottom Bar (Inside Sidebar) -->
+<div class="p-md bg-surface-container border border-border-muted rounded-xl flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">query_stats</span>
+<div class="flex flex-col">
+<span class="font-label-upper text-label-upper text-primary">Insight Active</span>
+<span class="text-caption text-lore-text">Real-time matching</span>
+</div>
+</div>
+<button class="bg-secondary-container text-white px-md py-sm rounded font-label-upper text-label-upper hover:brightness-125 transition-all">
+                        Deep Scan
+                    </button>
+</div>
+</aside>
+</main>
+</div>
+<!-- Mobile Navigation (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-0 w-full h-16 px-lg flex justify-between items-center z-50 bg-surface-container-lowest border-t border-border-muted shadow-[0_-4px_12px_rgba(202,138,4,0.1)]">
+<a class="flex flex-col items-center gap-xs text-on-surface-variant font-caption text-caption" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span>Divination</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-primary bg-primary-container/20 rounded-full px-4 py-1 font-caption text-caption" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychiatry</span>
+<span>Insight</span>
+</a>
+</nav>
+<!-- Visual Polish: Background Glow -->
+<div class="fixed top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-container/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<script>
+        // Simple micro-interactions
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.classList.add('animate-pulse-gold');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.classList.remove('animate-pulse-gold');
+            });
+        });
+
+        // Simulating the live preview update
+        const descriptionInput = document.querySelector('textarea');
+        const previewBullets = document.querySelector('.preview-bullets'); // If targeted specifically
+        // (Implementation would go here for a real app)
+    </script>
+</body></html>

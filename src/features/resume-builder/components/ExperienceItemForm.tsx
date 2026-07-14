@@ -31,7 +31,7 @@ export function ExperienceItemForm({ id, index }: ExperienceItemFormProps) {
   const canMoveDown = index < experience.length - 1
 
   return (
-    <div className="border-[3px] border-black bg-white p-4">
+    <div className="qu-card p-4">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="font-semibold uppercase tracking-wide">Experience #{index + 1}</h3>
         <div className="flex gap-2">
@@ -132,7 +132,7 @@ export function ExperienceItemForm({ id, index }: ExperienceItemFormProps) {
             placeholder="• Led development of new features&#10;• Improved performance by 40%&#10;• Mentored junior engineers"
             className="min-h-[120px]"
           />
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-1 text-xs text-qu-text-muted">
             Use bullet points (one per line) to describe your achievements and responsibilities
           </p>
         </div>

@@ -11,10 +11,10 @@ export function PreviewPane() {
       <div className="mb-4 flex justify-end">
         <DownloadPdfButton />
       </div>
-      <div className="border-[3px] border-black bg-white p-8">
+      <div className="qu-resume-paper rounded-qu border border-qu-gold/40 bg-white p-8 shadow-qu-md">
         {/* Header */}
-        <div className="border-b-[3px] border-black pb-4">
-          <h1 className="rb-headline text-3xl uppercase tracking-wide">
+        <div className="border-b-2 border-[#1a1a1a]/15 pb-4">
+          <h1 className="qu-headline text-3xl uppercase tracking-wide">
             {personalInfo.fullName || 'Your Name'}
           </h1>
           {personalInfo.jobTitle && (
@@ -40,7 +40,7 @@ export function PreviewPane() {
         {/* Summary */}
         {summary && (
           <div className="mt-6">
-            <h2 className="rb-headline text-lg uppercase tracking-wide">Summary</h2>
+            <h2 className="qu-headline text-lg uppercase tracking-wide">Summary</h2>
             <p className="mt-2 text-sm leading-relaxed">{summary}</p>
           </div>
         )}
@@ -48,7 +48,7 @@ export function PreviewPane() {
         {/* Experience */}
         {experience.length > 0 && (
           <div className="mt-6">
-            <h2 className="rb-headline text-lg uppercase tracking-wide">Experience</h2>
+            <h2 className="qu-headline text-lg uppercase tracking-wide">Experience</h2>
             <div className="mt-3 space-y-4">
               {experience.map((exp) => (
                 <div key={exp.id}>
@@ -57,7 +57,7 @@ export function PreviewPane() {
                       <h3 className="font-semibold">{exp.position || 'Position'}</h3>
                       <p className="text-sm">{exp.company || 'Company'}</p>
                     </div>
-                    <div className="text-right text-sm text-muted-foreground">
+                    <div className="text-right text-sm text-gray-600">
                       {exp.location && <p>{exp.location}</p>}
                       <p>
                         {formatMonthYear(exp.startDate)} -{' '}
@@ -81,7 +81,7 @@ export function PreviewPane() {
         {/* Education */}
         {education.length > 0 && (
           <div className="mt-6">
-            <h2 className="rb-headline text-lg uppercase tracking-wide">Education</h2>
+            <h2 className="qu-headline text-lg uppercase tracking-wide">Education</h2>
             <div className="mt-3 space-y-4">
               {education.map((edu) => (
                 <div key={edu.id}>
@@ -91,7 +91,7 @@ export function PreviewPane() {
                       <p className="text-sm">{edu.institution || 'Institution'}</p>
                       {edu.fieldOfStudy && <p className="text-sm">{edu.fieldOfStudy}</p>}
                     </div>
-                    <div className="text-right text-sm text-muted-foreground">
+                    <div className="text-right text-sm text-gray-600">
                       {edu.location && <p>{edu.location}</p>}
                       <p>
                         {formatMonthYear(edu.startDate)} -{' '}
@@ -108,7 +108,7 @@ export function PreviewPane() {
         {/* Skills */}
         {skills.length > 0 && (
           <div className="mt-6">
-            <h2 className="rb-headline text-lg uppercase tracking-wide">Skills</h2>
+            <h2 className="qu-headline text-lg uppercase tracking-wide">Skills</h2>
             <p className="mt-2 text-sm">{skills.join(' • ')}</p>
           </div>
         )}
@@ -116,7 +116,7 @@ export function PreviewPane() {
         {/* Certifications */}
         {certifications.length > 0 && (
           <div className="mt-6">
-            <h2 className="rb-headline text-lg uppercase tracking-wide">
+            <h2 className="qu-headline text-lg uppercase tracking-wide">
               Certifications
             </h2>
             <div className="mt-3 space-y-2">

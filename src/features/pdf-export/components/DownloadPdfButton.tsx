@@ -28,7 +28,7 @@ export function DownloadPdfButton() {
   }
 
   return (
-    <Button onClick={handleDownload} disabled={isGenerating} size="lg">
+    <Button onClick={handleDownload} disabled={isGenerating} size="sm">
       <Download className="mr-2 h-4 w-4" />
       {isGenerating ? 'Generating...' : 'Download PDF'}
     </Button>
